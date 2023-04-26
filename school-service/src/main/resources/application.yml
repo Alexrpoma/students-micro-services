@@ -21,4 +21,7 @@ spring:
       ddl-auto: create-drop
     database-platform: org.hibernate.dialect.PostgreSQLDialect
     database: postgresql
+application:
+  config:
+    students-url: http://localhost:8090/student
 

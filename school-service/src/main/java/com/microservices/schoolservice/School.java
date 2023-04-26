@@ -3,10 +3,7 @@ package com.microservices.schoolservice;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.util.UUID;
 
@@ -17,6 +14,7 @@ import static jakarta.persistence.GenerationType.AUTO;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
 public class School {
 
   @Id

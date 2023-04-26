@@ -6,6 +6,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.UUID;
 
 @RestController
 @RequiredArgsConstructor
@@ -23,6 +24,11 @@ public class SchoolController {
   @GetMapping
   public ResponseEntity<List<School>> getAllSchool() {
     return ResponseEntity.ok(schoolService.getAllSchool());
+  }
+
+  @GetMapping("/with-students/{schoolId}")
+  public ResponseEntity<SchoolWithStudents> findAllSchoolsWithStudents(@PathVariable("schoolId") UUID id) {
+    return ResponseEntity.ok(schoolService.findSchoolWithStudents(id));
   }
 
 }
