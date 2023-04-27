@@ -12,6 +12,7 @@ import java.util.UUID;
 public class SchoolService {
 
   private final SchoolRepository  schoolRepository;
+
   private final StudentClient studentClient;
 
   public void createSchool(School school) {
@@ -27,7 +28,7 @@ public class SchoolService {
       .orElse(
         School.builder().name("NOT FOUND").email("NOT FOUND").build()
       );
-    var students = studentClient.findAllStudentsBySchool(id); // find all students from student service
+    var students = studentClient.findAllStudentsBySchool(id);// Here we are getting the students from the student-service
     return SchoolWithStudents.builder()
       .name(school.getName())
       .email(school.getEmail())
