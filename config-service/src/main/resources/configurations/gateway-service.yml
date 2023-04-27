@@ -1,0 +1,22 @@
+eureka:
+  client:
+    register-with-eureka: false
+spring:
+  application:
+    name: gateway-service
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+      routes:
+        - id: student-service
+          uri: lb://student-service
+          predicates:
+            - Path=/student/**
+        - id: school-service
+          uri: lb://school-service
+          predicates:
+            - Path=/school/**
+server:
+  port: 9000
